@@ -54,6 +54,14 @@ public class Entrenador {
         this.email = email;
     }
     
+    public void agregarPokebola(Pokebola pokebola){
+        if (pokebola!=null){
+            mochilaPokebolas.add(pokebola);
+            System.out.println("Pokebola agregada correctamente");
+            
+        }
+        
+    }
     
     
     
