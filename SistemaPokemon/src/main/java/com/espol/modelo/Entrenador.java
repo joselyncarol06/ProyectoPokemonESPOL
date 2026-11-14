@@ -63,6 +63,10 @@ public class Entrenador {
         
     }
     
+    public int contarPokebolas() {   
+        return mochilaPokebolas.size();
+    }
+    
     
     
     
