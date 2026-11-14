@@ -35,20 +35,27 @@ public class Entrenador {
     public String getNombre() {
         return nombre;
     }
-    
-    
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
+    public ArrayList<Pokebola> getMochilaPokebolas() {
+        return mochilaPokebolas;
     }
-
+    
+    
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
+    
     
     
     
