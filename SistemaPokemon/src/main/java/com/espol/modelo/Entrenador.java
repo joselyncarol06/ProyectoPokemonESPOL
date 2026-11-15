@@ -142,7 +142,29 @@ public class Entrenador {
         return null;
     }
     
+public boolean liberarPokemon(String codigo) {
+    for (Pokebola p : mochilaPokebolas) {
+        // Si la pokebola no está vacía y el Pokémon dentro coincide con el código buscado
+        if (!p.estaVacia() && p.getPokemonContenido().getCodigo().equalsIgnoreCase(codigo)) {
+            p.liberarPokemon(); // Llama al método que ya tienes en la clase Pokebola
+            System.out.println("¡Pokémon liberado con éxito!");
+            return true;
+        }
+    }
+    return false; // No se encontró ningún Pokémon con ese código
     
+}
+    public boolean registrarPokemon(Pokemon pokemon) {
+    for (Pokebola p : mochilaPokebolas) {
+        if (p.estaVacia()) {
+            p.guardarPokemon(pokemon);
+            System.out.println("¡" + pokemon.getNombre() + " ha sido registrado en una Pokébola!");
+            return true;
+        }
+    }
+    System.out.println("¡No tienes Pokébolas vacías en la mochila!");
+    return false;
+}
     
     
     

@@ -10,7 +10,7 @@ public class Gimnasio extends LugarPokemon {
     private static int contador = 0; // Variable de instancia que nos ayudar a contar el numero de gimnasio 
     
 
-    public Gimnasio(String lider, String medalla, String nombre, String codigo, String ciudad) { // constructor de la Clase Gimnasio 
+    public Gimnasio(String lider, String medalla, String nombre, String ciudad) { // constructor de la Clase Gimnasio 
         super(nombre, ciudad, "GYM" + (++contador));// Llamado de las variable instancia de lo 
         this.lider = lider;
         this.medalla = medalla;
