@@ -4,11 +4,12 @@
  */
 package com.mycompany.sistemapokemon.menuprincipal;
 
-import com.espol.modelo.*;
+import com.espol.modelo.pokebola.TipoPokebola;
+import com.espol.modelo.pokebola.Pokebola;
 import java.util.ArrayList;
 import java.util.Scanner;
-import com.espol.modelo.Entrenador;
-import com.espol.modelo.Equipo;
+import com.espol.modelo.Entrenador.Entrenador;
+import com.espol.modelo.Entrenador.Equipo;
 
 public class NuevoPefil {
     public static void crearNuevoPerfil(Scanner scanner, ArrayList<Entrenador> entrenadores, ArrayList<Equipo> equipos) {

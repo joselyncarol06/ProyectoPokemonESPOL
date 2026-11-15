@@ -4,8 +4,11 @@
 
 package com.mycompany.sistemapokemon;
 
-import com.espol.modelo.*;
-import com.espol.modelo.Pokebola;
+import com.espol.modelo.Entrenador.Equipo;
+import com.espol.modelo.Entrenador.Entrenador;
+import com.espol.modelo.pokebola.TipoPokebola;
+import com.espol.modelo.pokemon.Pokemon;
+import com.espol.modelo.pokebola.Pokebola;
 import com.espol.modelo.LugarPokemon.*;
 import com.mycompany.sistemapokemon.menuprincipal.MenuPrincipal;
 import java.util.ArrayList;

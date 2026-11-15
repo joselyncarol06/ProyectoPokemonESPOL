@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.sistemapokemon.menuprincipal.submenus;
+import com.espol.modelo.Entrenador.Entrenador;
+import com.espol.modelo.pokebola.TipoPokebola;
+import com.espol.modelo.pokebola.Pokebola;
 import java.util.Scanner;
-import com.espol.modelo.*;
+
 
 
 public class AdministrarEntrenador {

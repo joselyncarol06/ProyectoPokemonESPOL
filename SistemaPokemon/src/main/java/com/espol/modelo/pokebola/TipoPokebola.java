@@ -1,4 +1,4 @@
-package com.espol.modelo;
+package com.espol.modelo.pokebola;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

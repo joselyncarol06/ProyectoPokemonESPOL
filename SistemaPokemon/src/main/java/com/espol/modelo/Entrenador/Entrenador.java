@@ -2,12 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.espol.modelo;
+package com.espol.modelo.Entrenador;
 
 /**
  *
  * @author josel
  */
+import com.espol.modelo.pokebola.Pokebola;
+import com.espol.modelo.pokemon.Pokemon;
 import java.util.ArrayList;
 
 /**

@@ -4,8 +4,8 @@
  */
 package com.mycompany.sistemapokemon.menuprincipal.submenus;
 
+import com.espol.modelo.Entrenador.Equipo;
 import java.util.Scanner;
-import com.espol.modelo.*;
 import java.util.ArrayList;
 
 public class AdministrarEquipos {

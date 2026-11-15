@@ -1,7 +1,7 @@
 
 package com.espol.modelo.LugarPokemon;
 
-import com.espol.modelo.Pokemon;
+import com.espol.modelo.pokemon.Pokemon;
 
 import java.time.LocalDate;
 public class RegistroBatallla {

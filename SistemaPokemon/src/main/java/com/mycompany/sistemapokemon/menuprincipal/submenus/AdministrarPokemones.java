@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.sistemapokemon.menuprincipal.submenus;
+import com.espol.modelo.Entrenador.Entrenador;
+import com.espol.modelo.pokebola.Pokebola;
+import com.espol.modelo.pokemon.Pokemon;
 import java.util.Scanner;
-import com.espol.modelo.*;
 
 public class AdministrarPokemones {
     public static void menuAdministrarPokemones(Scanner scanner, Entrenador entrenador) {
