@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.espol.modelo.LugarPokemon;
+package com.espol.modelo.LugarPokemon.Registros;
 
+import com.espol.modelo.LugarPokemon.CentroDeSalud;
 import com.espol.modelo.pokemon.Pokemon;
 
 import java.time.LocalDate;

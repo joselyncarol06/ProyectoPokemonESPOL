@@ -1,6 +1,7 @@
 
-package com.espol.modelo.LugarPokemon;
+package com.espol.modelo.LugarPokemon.Registros;
 
+import com.espol.modelo.LugarPokemon.Gimnasio;
 import com.espol.modelo.pokemon.Pokemon;
 
 import java.time.LocalDate;
