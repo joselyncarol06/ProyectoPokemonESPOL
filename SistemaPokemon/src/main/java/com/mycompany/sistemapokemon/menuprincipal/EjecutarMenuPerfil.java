@@ -12,7 +12,7 @@ import java.util.Scanner;
 import com.mycompany.sistemapokemon.menuprincipal.submenus.*;
 
 public class EjecutarMenuPerfil {
-    public static void ejecutarMenuPerfil(Scanner scanner, Entrenador entrenador, ArrayList<Equipo> equipos, ArrayList<LugarPokemon> lugares) {
+    public static void ejecutarMenuPerfil(Scanner scanner, Entrenador entrenador, ArrayList<Equipo> equipos, ArrayList<LugarPokemon> lugares, ArrayList<Entrenador> entrenadores) {
         int opcion = 0;
         do {
             System.out.println("\n==================================================");
@@ -27,15 +27,21 @@ public class EjecutarMenuPerfil {
             System.out.println("6. Regresar a Selección de Perfil[cite: 6]");
             System.out.print("Ingrese una opción: ");
 
-            opcion = scanner.nextInt();
-            scanner.nextLine();
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+                scanner.nextLine();
+            } else {
+                System.out.println("Opción inválida. Ingrese un número.");
+                scanner.nextLine();
+                continue;
+        }
 
             switch (opcion) {
                 case 1:
-                    AdministrarPokemones.menuAdministrarPokemones(scanner, entrenador);
+                   AdministrarEntrenador.menuAdministrarEntrenador(scanner, entrenador);
                     break;
                 case 2:
-                   AdministrarEntrenador.menuAdministrarEntrenador(scanner, entrenador);
+                   AdministrarPokemones.menuAdministrarPokemones(scanner, entrenador);
                     break;
                 case 3:
                    AdministrarGimnasio.menuAdministrarGimnasios(scanner, entrenador, lugares);
@@ -44,7 +50,7 @@ public class EjecutarMenuPerfil {
                     AdministrarCentroPokemon.menuAdministrarCentrosPokemon(scanner, entrenador, lugares);
                     break;
                 case 5:
-                    AdministrarEquipos.menuAdministrarEquipos(scanner, equipos);
+                    AdministrarEquipos.menuAdministrarEquipos(scanner, equipos, entrenadores);
                     break;
                 case 6:
                     System.out.println("Regresando a selección de perfil...");

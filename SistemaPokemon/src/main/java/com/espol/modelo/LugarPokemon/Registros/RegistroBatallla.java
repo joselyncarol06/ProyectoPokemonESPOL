@@ -23,6 +23,7 @@ public class RegistroBatallla {
         System.out.println("=== BITÁCORA DE BATALLA ===");
         System.out.println("Fecha: " + fecha);
         System.out.println("Gimnasio: " + gimnasio.getNombre() + " (" + gimnasio.getCiudad() + ")");
+        System.out.println("Pokémon utilizado: " + pokemon.getNombre());
         System.out.println("Resultado: " + resultado);
         System.out.println("---------------------------");
     }

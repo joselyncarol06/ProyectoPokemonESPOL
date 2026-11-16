@@ -4,10 +4,14 @@
  */
 package com.mycompany.sistemapokemon.menuprincipal.submenus;
 
+import com.espol.modelo.pokemon.Pokemon;
+import com.espol.modelo.pokebola.Pokebola;
+import com.espol.modelo.LugarPokemon.Registros.RegistroBatallla;
 import com.espol.modelo.Entrenador.Entrenador;
 import java.util.Scanner;
 import com.espol.modelo.LugarPokemon.*;
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class AdministrarGimnasio {
     public static void menuAdministrarGimnasios(Scanner scanner, Entrenador entrenador, ArrayList<LugarPokemon> lugares) {
@@ -20,8 +24,14 @@ public class AdministrarGimnasio {
             System.out.println("4. Regresar");
             System.out.print("Ingrese una opción: ");
 
-            opcion = scanner.nextInt();
-            scanner.nextLine();
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+                scanner.nextLine();
+            } else {
+                System.out.println("Opción inválida. Ingrese un número.");
+                scanner.nextLine();
+                continue;
+            }
 
             switch (opcion) {
                 case 1:
@@ -45,7 +55,7 @@ public class AdministrarGimnasio {
                     System.out.println("¡Gimnasio registrado exitosamente!");
                     break;
                 case 3:
-                    System.out.println("Registro de batalla en gimnasio seleccionado.");
+                    registrarVisitaGimnasio(scanner, entrenador, lugares);
                     break;
                 case 4:
                     System.out.println("Regresando...");
@@ -55,4 +65,117 @@ public class AdministrarGimnasio {
             }
         } while (opcion != 4);
     }
+    
+    
+    /**
+   * Permite registrar una visita a un gimnasio Pokemon.
+   */
+    public static void registrarVisitaGimnasio(Scanner scanner, Entrenador entrenador, ArrayList<LugarPokemon> lugares) {
+
+        ArrayList<Gimnasio> gimnasios = new ArrayList<>();
+
+        // Buscar gimnasios registrados
+        for (LugarPokemon lugar : lugares) {
+            if (lugar instanceof Gimnasio) {
+                gimnasios.add((Gimnasio) lugar);
+            }
+        }
+
+        if (gimnasios.isEmpty()) {
+            System.out.println("No hay gimnasios registrados.");
+            return;
+        }
+
+        // Mostrar gimnasios
+        for (int i = 0; i < gimnasios.size(); i++) {
+            System.out.println((i + 1) + ". " + gimnasios.get(i).getNombre());
+        }
+
+        System.out.print("Seleccione gimnasio: ");
+        int opcionG = leerNumero(scanner);
+
+        if (opcionG < 1 || opcionG > gimnasios.size()) {
+            System.out.println("Gimnasio invalido.");
+            return;
+        }
+ 
+        Gimnasio gimnasio = gimnasios.get(opcionG - 1);
+
+        // Obtener Pokemon del entrenador
+        ArrayList<Pokemon> pokemones = new ArrayList<>();
+
+        for (Pokebola pokebola : entrenador.getMochilaPokebolas()) {
+            if (!pokebola.estaVacia()) {
+            pokemones.add(pokebola.getPokemonContenido());
+            }
+        }
+
+        if (pokemones.isEmpty()) {
+            System.out.println("No tienes Pokemon disponibles.");
+            return;
+        }
+
+        // Mostrar Pokemon
+        for (int i = 0; i < pokemones.size(); i++) {
+            System.out.println((i + 1) + ". " + pokemones.get(i).getNombre());
+        }
+
+        System.out.print("Seleccione Pokemon: ");
+        int opcionP = leerNumero(scanner);
+
+        if (opcionP < 1 || opcionP > pokemones.size()) {
+            System.out.println("Pokemon invalido.");
+            return;
+        }
+
+        Pokemon pokemon = pokemones.get(opcionP - 1);
+
+        // Seleccionar resultado
+        System.out.println("1. Victoria");
+        System.out.println("2. Derrota");
+        System.out.print("Resultado: ");
+
+        int opcionR = leerNumero(scanner);
+
+        if (opcionR != 1 && opcionR != 2) {
+            System.out.println("Resultado invalido.");
+            return;
+        }
+
+        String resultado = opcionR == 1 ? "Victoria" : "Derrota";
+
+        // Llamar al metodo de la clase Gimnasio
+        gimnasio.registrarBatalla(pokemon, resultado);
+    }
+
+    /**
+    * Lee un numero evitando errores si el usuario ingresa letras.
+    */
+    private static int leerNumero(Scanner scanner) {
+
+        if (!scanner.hasNextInt()) {
+        scanner.nextLine();
+        return -1;
+        }
+
+        int numero = scanner.nextInt();
+        scanner.nextLine();
+
+        return numero;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

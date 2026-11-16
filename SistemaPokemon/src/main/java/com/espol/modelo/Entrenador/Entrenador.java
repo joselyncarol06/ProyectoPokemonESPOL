@@ -147,7 +147,7 @@ public class Entrenador {
 public boolean liberarPokemon(String codigo) {
     for (Pokebola p : mochilaPokebolas) {
         // Si la pokebola no está vacía y el Pokémon dentro coincide con el código buscado
-        if (!p.estaVacia() && p.getPokemonContenido().getCodigo().equalsIgnoreCase(codigo)) {
+        if (p.getCodigo().equalsIgnoreCase(codigo) && !p.estaVacia()) {
             p.liberarPokemon(); // Llama al método que ya tienes en la clase Pokebola
             System.out.println("¡Pokémon liberado con éxito!");
             return true;

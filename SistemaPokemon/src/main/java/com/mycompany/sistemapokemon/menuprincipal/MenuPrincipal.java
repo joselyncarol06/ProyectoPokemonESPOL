@@ -41,10 +41,16 @@ public class MenuPrincipal {
                             break;
                         }
                         System.out.print("Ingrese el número del perfil a seleccionar: ");
+                        if (!scanner.hasNextInt()) {
+                            System.out.println("Ingrese un número válido.");
+                            scanner.nextLine();
+                            break;
+                        }
+
                         int index = scanner.nextInt() - 1;
                         scanner.nextLine();
                         if (index >= 0 && index < entrenadores.size()) {
-                            EjecutarMenuPerfil.ejecutarMenuPerfil(scanner, entrenadores.get(index), equipos, lugares);;
+                            EjecutarMenuPerfil.ejecutarMenuPerfil(scanner,entrenadores.get(index),equipos,lugares,entrenadores);
                         } else {
                             System.out.println("¡Índice de perfil inválido!");
                         }

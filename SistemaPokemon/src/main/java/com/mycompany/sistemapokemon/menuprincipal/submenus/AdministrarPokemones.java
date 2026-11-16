@@ -19,8 +19,14 @@ public class AdministrarPokemones {
             System.out.println("4. Regresar");
             System.out.print("Ingrese una opción: ");
 
-            opcion = scanner.nextInt();
-            scanner.nextLine();
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+                scanner.nextLine();
+            } else {
+                System.out.println("Opción inválida. Ingrese un número.");
+                scanner.nextLine();
+                continue;
+            }
 
             switch (opcion) {
                 case 1:

@@ -24,18 +24,21 @@ public class RegistroSalud {
         this.pokemonesAtendidos = new ArrayList<>(pokemonesAtendidos);
     }
     
-    
-
-   
 
     public void imprimirComprobante() {
         System.out.println("=== COMPROBANTE DE CURACIÓN ===");
         System.out.println("Fecha: " + fecha);
         System.out.println("Centro de Salud: " + centro.getNombre() + " (" + centro.getCiudad() + ")");
         System.out.println("Enfermera a cargo: " + centro.getEnfermeraCargo());
-        System.out.println("Total de Pokémones atendidos: " + pokemonesAtendidos.size());
-        System.out.println("===============================");
-    }
+        System.out.println("Pokémones atendidos:");
 
+        for (Object objeto : pokemonesAtendidos) {
+            Pokemon pokemon = (Pokemon) objeto;
+            System.out.println("- " + pokemon.getNombre());
+        }
+
+        System.out.println("Total de Pokémones atendidos: " + pokemonesAtendidos.size());
+        System.out.println("==============================");
+    }
     
 }
